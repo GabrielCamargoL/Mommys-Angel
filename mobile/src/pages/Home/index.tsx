@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import { propsStack } from "../../types/propsStack";
 import Loading from "../../components/Loading";
-import { Container, ButtonFeatures, ButtonFeaturesView } from "./styles";
-import LinearGradient from "react-native-linear-gradient";
+import { Container, Col, Row } from "./styles";
+import { ButtonsHome } from "../../components/ButtonsHome";
 
 export function Home() {
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
 	const navigation = useNavigation<propsStack>();
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false);
+		}, 3000);
+	}, []);
 
 	return (
 		<>
@@ -16,31 +22,9 @@ export function Home() {
 				<Loading />
 				:
 				<Container>
-					<Text style={styles.title}>Home</Text>
-					<ButtonFeaturesView>
-						<ButtonFeatures title="kkkkk" onPress={() => { }} />
-					</ButtonFeaturesView>
-					<ButtonFeatures title="kkkkk" onPress={() => { }} />
-					<ButtonFeatures title="kkkkk" onPress={() => { }} />
-					<ButtonFeatures title="kkkkk" onPress={() => { }} />
+					<ButtonsHome />
 				</Container>
 			}
 		</>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		backgroundColor: '#000'
-	},
-	title: {
-
-	},
-	linearGradient: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		borderRadius: 5,
-		height: '100%',
-		width: '100%',
-	},
-});
