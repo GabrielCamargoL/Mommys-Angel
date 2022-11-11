@@ -10,28 +10,28 @@ export function ButtonsHome() {
       <Row>
         <Col>
           <ButtonFeatures backgroundColor='#000' onPress={() => { }} >
-            <IconFeature source={require('./../../assets/Union.png')} />
+            <IconFeature source={require('./../../assets/img/Union.png')} />
           </ButtonFeatures>
           <Text>Contrações</Text>
         </Col>
 
         <Col>
           <ButtonFeatures backgroundColor='#FF7A35' onPress={() => { }} >
-            <IconFeature source={require('./../../assets/Flat.png')} />
+            <IconFeature source={require('./../../assets/img/Flat.png')} />
           </ButtonFeatures>
           <Text>Remédios</Text>
         </Col>
 
         <Col>
           <ButtonFeatures backgroundColor='#FD313D' onPress={() => { }} >
-            <IconFeature resizeMode='center' source={require('./../../assets/Heart.png')} />
+            <IconFeature resizeMode='center' source={require('./../../assets/img/Heart.png')} />
           </ButtonFeatures>
           <Text>Coração</Text>
         </Col>
 
         <Col>
           <ButtonFeatures backgroundColor='#5558FF' onPress={() => { }} >
-            <IconFeature source={require('./../../assets/Union.png')} />
+            <IconFeature source={require('./../../assets/img/Union.png')} />
           </ButtonFeatures>
           <Text>Água</Text>
         </Col>

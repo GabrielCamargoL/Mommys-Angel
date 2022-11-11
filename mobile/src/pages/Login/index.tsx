@@ -19,7 +19,7 @@ function Login() {
 				colors={['#EED7F5', '#FCCEC2', '#C6E1FC']}
 				style={styles.linearGradient}
 			>
-				<Image style={styles.logo} source={require('../../assets/logo.png')} />
+				<Image style={styles.logo} source={require('../../assets/img/logo.png')} />
 
 				<View style={styles.formContainer}>
 					<Text style={styles.label} >Email</Text>

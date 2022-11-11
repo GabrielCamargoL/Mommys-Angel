@@ -5,6 +5,7 @@ import { propsStack } from "../../types/propsStack";
 import Loading from "../../components/Loading";
 import { Container, Col, Row } from "./styles";
 import { ButtonsHome } from "../../components/ButtonsHome";
+import { BabyState } from "../../components/BabyState";
 
 export function Home() {
 	const [loading, setLoading] = useState<boolean>(true);
@@ -22,6 +23,7 @@ export function Home() {
 				<Loading />
 				:
 				<Container>
+					<BabyState />
 					<ButtonsHome />
 				</Container>
 			}

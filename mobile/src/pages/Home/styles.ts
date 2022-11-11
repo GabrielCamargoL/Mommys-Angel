@@ -8,7 +8,7 @@ interface TouchableType extends TouchableOpacityProps {
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #F9EFFB;
+  background-color: #F3E6F7;
   align-items: center;
   justify-content: center;
 `;
