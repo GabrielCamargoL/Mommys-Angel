@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, Text } from "react-native";
 import { propsStack } from "../../types/propsStack";
 import Loading from "../../components/Loading";
-import { Container, Col, Row } from "./styles";
+import { Container, SafeAreaView, Col, Row } from "./styles";
 import { ButtonsHome } from "../../components/ButtonsHome";
 import { BabyState } from "../../components/BabyState";
 
@@ -22,10 +21,12 @@ export function Home() {
 			{loading ?
 				<Loading />
 				:
-				<Container>
-					<BabyState />
-					<ButtonsHome />
-				</Container>
+				<SafeAreaView>
+					<Container>
+						<BabyState />
+						<ButtonsHome />
+					</Container>
+				</SafeAreaView>
 			}
 		</>
 	);

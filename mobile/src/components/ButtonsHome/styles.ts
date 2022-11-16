@@ -5,32 +5,48 @@ interface TouchableType extends TouchableOpacityProps {
   backgroundColor: string;
 }
 
+export const Container = styled.View`
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px
+  margin: 50px 15px;
+  width: 380px;
+`;
+
 export const Row = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  align-self:stretch;
 `;
 
 export const Col = styled.View`
+  flex: 1
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 export const ButtonFeatures = styled.TouchableOpacity<TouchableType>`
+  margin: 5px;
   background-color: ${props => props.backgroundColor ? props.backgroundColor : '#AAA'};
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
+  height: 115px;
+  border-radius: 8px;
+  align-self: stretch;
 `;
 
 export const IconFeature = styled.Image`
-  margin-left: 3px;
-  width: 22px;
-  height: 30px;
-  resize: both;
+  
+`;
+
+export const Title = styled.Text`
+  font-family: 'Montserrat-SemiBold';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFF;
+  margin-top: 5px;
 `;

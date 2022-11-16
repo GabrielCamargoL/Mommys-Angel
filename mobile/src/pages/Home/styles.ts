@@ -1,16 +1,20 @@
 import styled from 'styled-components/native';
-import { TouchableOpacityProps, View } from 'react-native';
+import { TouchableOpacityProps, StatusBar, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface TouchableType extends TouchableOpacityProps {
   backgroundColor: string;
 }
 
-export const Container = styled.View`
+export const SafeAreaView = styled.SafeAreaView`
+  flex: 1;
+  padding-top: ${StatusBar.currentHeight};
+  background-color: #F3E6F7;
+`;
+
+export const Container = styled.ScrollView`
   flex: 1;
   background-color: #F3E6F7;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const Row = styled.View`

@@ -23,7 +23,7 @@ export const Col = styled.View`
 export const BabyCard = styled.View`
   background-color: #fff;
   width: 90%;
-  height: 380px;
+  height: 250px;
   border-radius: 24px;
   padding: 7% 10%;
 `;

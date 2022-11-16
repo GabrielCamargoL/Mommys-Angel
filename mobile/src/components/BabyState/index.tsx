@@ -7,7 +7,6 @@ export function BabyState() {
     <Container>
       <BabyCard>
         <CardTitle>Semana {weeksBetween(new Date('2021-12-01'), new Date('2022-12-18'))}</CardTitle>
-        <CardSubTitle>Dia 6</CardSubTitle>
         <CardDescription>Seu bebê está com 51cm. S2
           {'\n\n'}Cuide bem dele, que logo logo este amorzinho estára em seus braços.</CardDescription>
       </BabyCard>
