@@ -1,65 +1,71 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  useWindowDimensions,
-  Image,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import Carousel from 'react-native-reanimated-carousel';
+import { useNavigation } from "@react-navigation/native";
+import { StyleSheet } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+import { propsStack } from "../../types/propsStack";
+import { ButtonFeatures, Col, Container, IconFeature, Row, Title } from "./styles";
 
-import { tips } from '../../utils/tips';
-import { CardTips, DescriptionTips, IconTips, TitleTips, ViewIcon } from './styles';
+import CarouselTips from '../../components/CarouselTips';
+import { tips } from "../../utils/tips";
+import { useEffect, useState } from "react";
+
+
 
 export default function Tips() {
-  const { width, height } = useWindowDimensions();
-  const carouselData = tips
+  const [themes, setThemes] = useState<any>([]);
+  const navigation = useNavigation<propsStack>();
+  const Bodychanges = () => <CarouselTips />;
 
+  useEffect(() => {
+    separateTips();
+  }, [])
+
+  function separateTips() {
+    let pivot: any = [];
+    for (let [key, value] of Object.entries(tips)) {
+      pivot.push(key)
+    }
+    setThemes(pivot)
+  }
   return (
-    <GestureHandlerRootView style={styles.container}>
-      <CardTips>
-        <Carousel
-          data={carouselData['Mudanças no corpo']}
-          style={styles.carousel}
-          width={width * 0.90}
-          pagingEnabled={true}
-          snapEnabled={true}
-          loop={true}
-          autoPlay={false}
-          autoPlayReverse={false}
-          renderItem={({ item, index }) => (
-            <View>
-              <TouchableOpacity onPress={() => Alert.alert(`Dica numero ${index}: ${item.title}\n`)}>
-                <ViewIcon>
-                  <IconTips source={item.icon} />
-                </ViewIcon>
-                <TitleTips>{item.title}</TitleTips>
-                <DescriptionTips>{item.description}</DescriptionTips>
-              </TouchableOpacity>
-            </View>
-          )}
-        />
-      </CardTips>
-    </GestureHandlerRootView>
-  );
-}
+    <Container>
+      {themes.map((item: [], index) => {
+        return (
+          <Row key={index}>
+            <Col>
+              {item.map((tip: any, index) => {
+                return (
+                  <ButtonFeatures onPress={() => tip.nav} >
+                    <LinearGradient colors={['#FF7A00', '#FFC700', '#FFE458']} style={styles.linearGradient} >
+                      <IconFeature source={require('./../../assets/img/contraction.png')} />
+                      <Title>{tip.title}</Title>
+                    </LinearGradient>
+                  </ButtonFeatures>
+                )
+              })}
+            </Col>
+          </Row>
+        )
+      })}
+    </Container>
+  )
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F3E6F7',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  carousel: {
+
+  linearGradient: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 32,
-  }
-});
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+    padding: 20,
+    borderRadius: 16,
+    alignSelf: "stretch"
+  },
+})
+
+
+

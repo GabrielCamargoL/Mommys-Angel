@@ -19,16 +19,16 @@ export default function Gallery() {
     },
     {
       name: 'mulher gravida 1',
-      image: require('../../assets/img/pregnant_sample.png'),
+      image: require('../../assets/img/pregnant_sample2.png'),
     },
     {
       name: 'mulher gravida 2',
       image: require('../../assets/img/pregnant_sample.png'),
     },
-    // Uncomment 4th image to see the difference
-    // {
-    //   image: require('./assets/blue.jpeg'),
-    // },
+    {
+      name: 'mulher gravida 3',
+      image: require('../../assets/img/pregnant_sample2.png'),
+    },
   ];
 
   return (
@@ -52,13 +52,15 @@ export default function Gallery() {
         autoPlayReverse={false}
         modeConfig={{
           snapDirection: 'left',
-          stackInterval: 18
+          stackInterval: 18,
+          opacityInterval: 1,
+          showLength: 2
         }}
         customConfig={() => ({ type: 'positive', viewCount: 5 })}
         renderItem={({ item, index }) => (
           <View>
             <TouchableOpacity onPress={() => Alert.alert(`Foto: ${index}\n${item.name}`)}>
-              <Image source={require('../../assets/img/pregnant_sample.png')} />
+              <Image style={{ height: 240, width: 240 }} source={item.image} />
             </TouchableOpacity>
           </View>
         )}

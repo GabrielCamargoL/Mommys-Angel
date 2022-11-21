@@ -10,7 +10,10 @@ export type propsNavigationStack = {
   Water: undefined,
   Medicines: undefined,
   RegisterAccount: undefined,
-  Heart: undefined
+  Heart: undefined,
+  BodyChanges: undefined,
+  QuestionsTips: undefined,
+  Bag: undefined,
 };
 
 export type propsStack = NativeStackNavigationProp<propsNavigationStack>;

@@ -1,56 +1,51 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
+import { TouchableOpacityProps, View } from 'react-native';
 
+interface TouchableType extends TouchableOpacityProps {
+  backgroundColor: string;
+}
 
-export const CardTips = styled.View`
-  background-color: #fff;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 90%;
-  height: 80%;
-  border-radius: 12px;
-`;
-
-export const ViewIcon = styled.View`  
-  align-self:center;
+export const Container = styled.View`
+  flex: 2;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
+  margin: 50px 15px;
+  width: 380px;
+`;
+
+export const Row = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self:stretch;
+`;
+
+export const Col = styled.View`
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonFeatures = styled.TouchableOpacity<TouchableType>`
+  margin: 5px;
+  align-items: flex-start;
+  justify-content: center;
+  height: 115px;
+  border-radius: 12px;
+  align-self: stretch;
+`;
+
+export const IconFeature = styled.Image`
   
-  margin-top: 20px;
-  height: 200px;
-  width: 200px;
-  
-  border-radius: 100px;
-  background-color: #FCCEC2;
 `;
 
-export const IconTips = styled.Image`
-  height: 150px;
-  width: 150px;
-`;
-
-export const TitleTips = styled.Text`
-  margin-top: 20px;
-  font-family: 'Montserrat-Bold';
-  font-style: normal;
-  font-size: 28px;
-  line-height: 41px;
-
-  color: #271E4A;
-
-  text-align: center;
-  letter-spacing: 0.374px;
-`;
-
-export const DescriptionTips = styled.Text`
-  margin-top: 20px;
+export const Title = styled.Text`
   font-family: 'Montserrat-SemiBold';
-  font-style: normal;
   font-weight: 600;
-  font-size: 14px;
-
-  color: #271E4A;
-
-  opacity: 0.7;
+  font-size: 16px;
   line-height: 20px;
-  text-align: left;
+  color: #FFF;
+  margin-top: 5px;
 `;
