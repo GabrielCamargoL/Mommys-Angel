@@ -1,48 +1,57 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
+import Loading from '../../components/Loading';
 import { propsStack } from '../../types/propsStack';
 
 function Login() {
+	const [loading, setLoading] = useState<boolean>(false);
 	const navigation = useNavigation<propsStack>();
 
+	async function handleLogin() {
+		navigation.navigate('Home')
+	}
+
 	useEffect(() => {
-		setTimeout(() => {
-			navigation.navigate('Home');
-		}, 3000);
 
 	}, []);
-	return (
-		<View style={styles.container}>
-			<LinearGradient
-				colors={['#EED7F5', '#FCCEC2', '#C6E1FC']}
-				style={styles.linearGradient}
-			>
-				<Image style={styles.logo} source={require('../../assets/img/logo.png')} />
 
-				<View style={styles.formContainer}>
-					<Text style={styles.label} >Email</Text>
-					<TextInput style={styles.input} />
-					<Text style={styles.label} >Senha</Text>
-					<TextInput secureTextEntry style={styles.input} />
-				</View>
+	return (<>
+		{loading ?
+			<Loading />
+			:
+			<View style={styles.container}>
+				<LinearGradient
+					colors={['#EED7F5', '#FCCEC2', '#C6E1FC']}
+					style={styles.linearGradient}
+				>
+					<Image style={styles.logo} source={require('../../assets/img/logo.png')} />
 
-				<TouchableOpacity onPress={() => { navigation.navigate('Home') }}>
-					<View style={styles.button}>
-						<Text style={styles.buttonText} >Entrar</Text>
+					<View style={styles.formContainer}>
+						<Text style={styles.label} >Email</Text>
+						<TextInput style={styles.input} />
+						<Text style={styles.label} >Senha</Text>
+						<TextInput secureTextEntry style={styles.input} />
 					</View>
-				</TouchableOpacity>
 
-				<TouchableOpacity onPress={() => { }}>
-					<Text style={styles.headline} >Esqueci minha Senha!</Text>
-				</TouchableOpacity>
+					<TouchableOpacity onPress={() => handleLogin()}>
+						<View style={styles.button}>
+							<Text style={styles.buttonText} >Entrar</Text>
+						</View>
+					</TouchableOpacity>
 
-				<TouchableOpacity onPress={() => { }}>
-					<Text style={styles.headline} >Criar uma conta</Text>
-				</TouchableOpacity>
-			</LinearGradient>
-		</View>
+					<TouchableOpacity onPress={() => { }}>
+						<Text style={styles.headline} >Esqueci minha Senha!</Text>
+					</TouchableOpacity>
+
+					<TouchableOpacity onPress={() => { }}>
+						<Text style={styles.headline} >Criar uma conta</Text>
+					</TouchableOpacity>
+				</LinearGradient>
+			</View>
+		}
+	</>
 	)
 }
 

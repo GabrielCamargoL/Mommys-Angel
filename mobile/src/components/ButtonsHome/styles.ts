@@ -30,11 +30,10 @@ export const Col = styled.View`
 
 export const ButtonFeatures = styled.TouchableOpacity<TouchableType>`
   margin: 5px;
-  background-color: ${props => props.backgroundColor ? props.backgroundColor : '#AAA'};
   align-items: flex-start;
   justify-content: center;
   height: 115px;
-  border-radius: 8px;
+  border-radius: 12px;
   align-self: stretch;
 `;
 

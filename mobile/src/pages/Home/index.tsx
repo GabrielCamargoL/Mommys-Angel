@@ -5,6 +5,9 @@ import Loading from "../../components/Loading";
 import { Container, SafeAreaView, Col, Row } from "./styles";
 import { ButtonsHome } from "../../components/ButtonsHome";
 import { BabyState } from "../../components/BabyState";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { Alert } from "react-native";
 
 export function Home() {
 	const [loading, setLoading] = useState<boolean>(true);

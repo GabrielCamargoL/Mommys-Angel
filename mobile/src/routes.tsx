@@ -47,27 +47,15 @@ export function BottomTabsRoutes() {
             );
           } else if (route.name === 'Settings') {
             return (
-              <MaterialIcons
-                name='settings'
-                size={size}
-                color={color}
-              />
+              <MaterialIcons name='settings' size={size} color={color} />
             );
           } else if (route.name === 'Gallery') {
             return (
-              <MaterialIcons
-                name='photo'
-                size={size}
-                color={color}
-              />
+              <MaterialIcons name='photo' size={size} color={color} />
             );
           } else if (route.name === 'Tips') {
             return (
-              <MaterialIcons
-                name='lightbulb'
-                size={size}
-                color={color}
-              />
+              <MaterialIcons name='lightbulb' size={size} color={color} />
             );
           }
         },

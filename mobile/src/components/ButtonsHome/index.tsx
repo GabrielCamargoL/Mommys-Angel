@@ -12,7 +12,7 @@ export function ButtonsHome() {
       <Container>
         <Row>
           <Col>
-            <ButtonFeatures backgroundColor='yellow' onPress={() => navigation.navigate('Contraction')} >
+            <ButtonFeatures onPress={() => navigation.navigate('Contraction')} >
               <LinearGradient colors={['#FF7A00', '#FFC700', '#FFE458']} style={styles.linearGradient} >
                 <IconFeature source={require('./../../assets/img/contraction.png')} />
                 <Title>Contrações</Title>
@@ -21,7 +21,7 @@ export function ButtonsHome() {
           </Col>
 
           <Col>
-            <ButtonFeatures backgroundColor='#FF7A35' onPress={() => navigation.navigate('Medicines')} >
+            <ButtonFeatures onPress={() => navigation.navigate('Medicines')} >
               <LinearGradient colors={['#FF2574', '#FF53B0', '#FD8DFF']} style={styles.linearGradient} >
                 <IconFeature source={require('./../../assets/img/Flat.png')} />
                 <Title>Remédios</Title>
@@ -32,7 +32,7 @@ export function ButtonsHome() {
 
         <Row>
           <Col>
-            <ButtonFeatures backgroundColor='#FD313D' onPress={() => navigation.navigate('Heart')} >
+            <ButtonFeatures onPress={() => navigation.navigate('Heart')} >
               <LinearGradient colors={['#FF0000', '#FF7A35', '#FF5555']} style={styles.linearGradient} >
                 <IconFeature source={require('./../../assets/img/Heart.png')} />
                 <Title>Coração</Title>
@@ -41,7 +41,7 @@ export function ButtonsHome() {
           </Col>
 
           <Col>
-            <ButtonFeatures backgroundColor='#5558FF' onPress={() => navigation.navigate('Water')} >
+            <ButtonFeatures onPress={() => navigation.navigate('Water')} >
               <LinearGradient colors={['#5558FF', '#3382FF', '#00C0FF']} style={styles.linearGradient} >
                 <IconFeature source={require('./../../assets/img/Union.png')} />
                 <Title>Água</Title>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
     padding: 20,
-    borderRadius: 5,
+    borderRadius: 16,
     alignSelf: "stretch"
   },
 })
