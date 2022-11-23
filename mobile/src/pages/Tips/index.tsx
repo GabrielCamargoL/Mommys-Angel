@@ -1,51 +1,80 @@
+import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { propsStack } from "../../types/propsStack";
-import { ButtonFeatures, Col, Container, IconFeature, Row, Title } from "./styles";
+import { ButtonFeatures, CardTips, Col, Container, Icon, Row, Title, ViewIconContainer, ViewIconTitle } from "./styles";
 
-import CarouselTips from '../../components/CarouselTips';
-import { tips } from "../../utils/tips";
-import { useEffect, useState } from "react";
 
 
 
 export default function Tips() {
-  const [themes, setThemes] = useState<any>([]);
   const navigation = useNavigation<propsStack>();
-  const Bodychanges = () => <CarouselTips />;
 
-  useEffect(() => {
-    separateTips();
-  }, [])
-
-  function separateTips() {
-    let pivot: any = [];
-    for (let [key, value] of Object.entries(tips)) {
-      pivot.push(key)
-    }
-    setThemes(pivot)
-  }
   return (
     <Container>
-      {themes.map((item: [], index) => {
-        return (
-          <Row key={index}>
-            <Col>
-              {item.map((tip: any, index) => {
-                return (
-                  <ButtonFeatures onPress={() => tip.nav} >
-                    <LinearGradient colors={['#FF7A00', '#FFC700', '#FFE458']} style={styles.linearGradient} >
-                      <IconFeature source={require('./../../assets/img/contraction.png')} />
-                      <Title>{tip.title}</Title>
-                    </LinearGradient>
-                  </ButtonFeatures>
-                )
-              })}
-            </Col>
-          </Row>
-        )
-      })}
+      <CardTips>
+        <Row>
+          <Col>
+            <ButtonFeatures onPress={() => navigation.navigate("BodyChanges")} >
+              <ViewIconTitle>
+                <ViewIconContainer>
+                  <Icon source={require('./../../assets/img/tips/body.png')} />
+                </ViewIconContainer>
+                <Title>Mudanças no corpo</Title>
+              </ViewIconTitle>
+            </ButtonFeatures>
+          </Col>
+
+          <Col>
+            <ButtonFeatures onPress={() => navigation.navigate("Bag")} >
+              <ViewIconTitle>
+                <ViewIconContainer>
+                  <Icon source={require('./../../assets/img/tips/bag.png')} />
+                </ViewIconContainer>
+                <Title>A mala</Title>
+              </ViewIconTitle>
+            </ButtonFeatures>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <ButtonFeatures onPress={() => navigation.navigate("QuestionsTips")} >
+              <ViewIconTitle>
+                <ViewIconContainer>
+                  <Icon source={require('./../../assets/img/tips/myPregnancy.png')} />
+                </ViewIconContainer>
+                <Title>Minha Gravidez</Title>
+              </ViewIconTitle>
+            </ButtonFeatures>
+          </Col>
+
+          <Col>
+            <ButtonFeatures onPress={() => navigation.navigate("QuestionsTips")} >
+              <ViewIconTitle>
+                <ViewIconContainer>
+                  <Icon source={require('./../../assets/img/tips/baby.png')} />
+                </ViewIconContainer>
+                <Title>Chegou a Hora</Title>
+              </ViewIconTitle>
+            </ButtonFeatures>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <ButtonFeatures onPress={() => navigation.navigate("QuestionsTips")} >
+              <ViewIconTitle>
+                <ViewIconContainer>
+                  <Icon source={require('./../../assets/img/tips/timer.png')} />
+                </ViewIconContainer>
+                <Title>Após o parto</Title>
+              </ViewIconTitle>
+            </ButtonFeatures>
+          </Col>
+        </Row>
+      </CardTips>
     </Container>
   )
 };

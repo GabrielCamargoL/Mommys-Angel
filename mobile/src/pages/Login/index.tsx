@@ -10,7 +10,7 @@ function Login() {
 	const navigation = useNavigation<propsStack>();
 
 	async function handleLogin() {
-		navigation.navigate('Home')
+		navigation.navigate('HomeStack')
 	}
 
 	useEffect(() => {

@@ -15,6 +15,8 @@ import { propsNavigationStack } from "./types/propsStack";
 import Gallery from "./pages/Gallery";
 import Tips from "./pages/Tips";
 import Settings from "./pages/Settings";
+import BodyChanges from "./pages/BodyChanges";
+import Bag from "./pages/Bag";
 
 const Stack = createNativeStackNavigator<propsNavigationStack>();
 const BottomTab = createBottomTabNavigator<propsNavigationStack>();
@@ -28,7 +30,9 @@ export function Routes() {
         <Stack.Screen name="Medicines" component={Medicines} />
         <Stack.Screen name="Heart" component={Heart} />
         <Stack.Screen name="Water" component={Water} />
-        <Stack.Screen name="Home" component={BottomTabsRoutes} />
+        <Stack.Screen name="BodyChanges" component={BodyChanges} options={{ headerShown: true, headerTitle: 'Mudanças no corpo' }} />
+        <Stack.Screen name="Bag" component={Bag} options={{ headerShown: true, headerTitle: 'A Mala' }} />
+        <Stack.Screen name="HomeStack" component={BottomTabsRoutes} />
       </Stack.Navigator>
     </NavigationContainer>
   );

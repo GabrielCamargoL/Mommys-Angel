@@ -1,11 +1,7 @@
-import { useNavigation } from "@react-navigation/native";
-import { propsStack } from "../types/propsStack";
-
 export const tips = {
   "Mudanças no corpo": {
     config: {
       icon: require('../assets/img/tips/body.png'),
-      nav: useNavigation<propsStack>().navigate('BodyChanges')
     },
     items: [
       {
@@ -43,7 +39,6 @@ export const tips = {
   "A mala": {
     config: {
       icon: require("../assets/img/tips/bag.png"),
-      nav: useNavigation<propsStack>().navigate('Bag')
     },
     title: "Lista de Coisas para Levar",
     items: [
@@ -59,7 +54,6 @@ export const tips = {
   "Minha gravidez": {
     config: {
       icon: require('../assets/img/tips/body.png'),
-      nav: useNavigation<propsStack>().navigate('QuestionsTips')
     },
     title: "Minha gravidez",
     items: [
@@ -71,7 +65,6 @@ export const tips = {
   "Chegou a Hora": {
     config: {
       icon: require('../assets/img/tips/body.png'),
-      nav: useNavigation<propsStack>().navigate('QuestionsTips')
     },
     title: "Chegou a Hora",
     items: [
@@ -83,7 +76,6 @@ export const tips = {
   "Após o parto": {
     config: {
       icon: require('../assets/img/tips/body.png'),
-      nav: useNavigation<propsStack>().navigate('QuestionsTips')
     },
     title: "Após o parto",
     items: [

@@ -8,7 +8,7 @@ interface TouchableType extends TouchableOpacityProps {
 
 export const SafeAreaView = styled.SafeAreaView`
   flex: 1;
-  padding-top: ${StatusBar.currentHeight};
+  padding-top: ${StatusBar.currentHeight}px;
   background-color: #F3E6F7;
 `;
 

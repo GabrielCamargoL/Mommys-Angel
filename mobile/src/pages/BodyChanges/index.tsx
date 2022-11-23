@@ -13,7 +13,7 @@ import Carousel from 'react-native-reanimated-carousel';
 import { tips } from '../../utils/tips';
 import { CardTips, DescriptionTips, IconTips, TitleTips, ViewIcon } from './styles';
 
-export default function CarouselTips() {
+export default function BodyChanges() {
   const { width, height } = useWindowDimensions();
   const carouselData = tips
 
