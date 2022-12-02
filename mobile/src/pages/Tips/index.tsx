@@ -4,8 +4,12 @@ import { StyleSheet, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { propsStack } from "../../types/propsStack";
 import { ButtonFeatures, CardTips, Col, Container, Icon, Row, Title, ViewIconContainer, ViewIconTitle } from "./styles";
+import { tips } from "../../utils/tips";
 
-
+interface IProps {
+  question: string
+  answer: string
+}
 
 
 export default function Tips() {
@@ -40,7 +44,7 @@ export default function Tips() {
 
         <Row>
           <Col>
-            <ButtonFeatures onPress={() => navigation.navigate("QuestionsTips")} >
+            <ButtonFeatures onPress={() => navigation.navigate("Questions", { 'questions': tips["Minha gravidez"].items })} >
               <ViewIconTitle>
                 <ViewIconContainer>
                   <Icon source={require('./../../assets/img/tips/myPregnancy.png')} />
@@ -51,7 +55,7 @@ export default function Tips() {
           </Col>
 
           <Col>
-            <ButtonFeatures onPress={() => navigation.navigate("QuestionsTips")} >
+            <ButtonFeatures onPress={() => navigation.navigate("Questions", { 'questions': tips["Chegou a Hora"].items })} >
               <ViewIconTitle>
                 <ViewIconContainer>
                   <Icon source={require('./../../assets/img/tips/baby.png')} />
@@ -64,7 +68,7 @@ export default function Tips() {
 
         <Row>
           <Col>
-            <ButtonFeatures onPress={() => navigation.navigate("QuestionsTips")} >
+            <ButtonFeatures onPress={() => navigation.navigate("Questions", { 'questions': tips["Após o parto"].items })} >
               <ViewIconTitle>
                 <ViewIconContainer>
                   <Icon source={require('./../../assets/img/tips/timer.png')} />

@@ -18,6 +18,7 @@ import Settings from "./pages/Settings";
 import BodyChanges from "./pages/BodyChanges";
 import Bag from "./pages/Bag";
 import RegisterGestation from "./pages/RegisterGestation";
+import Questions from "./pages/Questions";
 
 const Stack = createNativeStackNavigator<propsNavigationStack>();
 const BottomTab = createBottomTabNavigator<propsNavigationStack>();
@@ -34,6 +35,7 @@ export function Routes() {
         <Stack.Screen name="Water" component={Water} />
         <Stack.Screen name="BodyChanges" component={BodyChanges} options={{ headerShown: true, headerTitle: 'Mudanças no corpo' }} />
         <Stack.Screen name="Bag" component={Bag} options={{ headerShown: true, headerTitle: 'A Mala' }} />
+        <Stack.Screen name="Questions" component={Questions} options={{ headerShown: true, headerTitle: 'Questões' }} />
         <Stack.Screen name="HomeStack" component={BottomTabsRoutes} />
       </Stack.Navigator>
     </NavigationContainer>

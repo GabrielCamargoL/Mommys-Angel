@@ -22,7 +22,7 @@ function Login() {
 	async function getToken() {
 		const token = await SessionController.getToken();
 		const user = await SessionController.getUserInfo();
-		if (token && user) navigation.navigate('RegisterGestation')
+		if (token && user) navigation.navigate('HomeStack')
 	}
 
 	async function handleLogin() {

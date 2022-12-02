@@ -50,31 +50,31 @@ export const tips = {
     items: [
       {
         question: 'Como ter certeza que estou grávida?',
-        anwser: 'Se a menstruação está atrasada, se o exame de laboratório ou ultrasom transvaginal são positivos, existe uma grande chance.'
+        answer: 'Se a menstruação está atrasada, se o exame de laboratório ou ultrasom transvaginal são positivos, existe uma grande chance.'
       },
       {
         question: 'Quando devo começar as visitas ao pré-natal?',
-        anwser: 'Antes mesmo de engravidar, pois, o ideal é que se prepare para receber seu bebê. Agora, se já estiver grávida deve ser o mais cedo possível.'
+        answer: 'Antes mesmo de engravidar, pois, o ideal é que se prepare para receber seu bebê. Agora, se já estiver grávida deve ser o mais cedo possível.'
       },
       {
         question: 'Qual a previsão para o parto?',
-        anwser: 'Para ter uma previsão de quando o bebê irá nascer, considera-se 40 semanas(280 dias) a partir da data da última menstruação.'
+        answer: 'Para ter uma previsão de quando o bebê irá nascer, considera-se 40 semanas(280 dias) a partir da data da última menstruação.'
       },
       {
         question: 'A partir de quando posso saber o sexo do bebê durante a gravidez?',
-        anwser: 'Geralmente a partir de 16 semanas, pelo ultrasom, mas mesmo assim depende da posção do bebê e que não é sempre uma certeza.'
+        answer: 'Geralmente a partir de 16 semanas, pelo ultrasom, mas mesmo assim depende da posção do bebê e que não é sempre uma certeza.'
       },
       {
         question: 'Posso tomar os remédios que eu ja tomava antes?',
-        anwser: 'Remédios na gravidez só devem ser utilizados quando necessários e sob orientação de um profissional da saúde.'
+        answer: 'Remédios na gravidez só devem ser utilizados quando necessários e sob orientação de um profissional da saúde.'
       },
       {
         question: 'Porque fumar cigarro na gestação é perigoso?',
-        anwser: 'Há um maior risco de aborto e dificulta o bebê a crescer e ganhar peso, entre outras complicações.'
+        answer: 'Há um maior risco de aborto e dificulta o bebê a crescer e ganhar peso, entre outras complicações.'
       },
       {
         question: 'Posso beber nos finais de semana?',
-        anwser: 'Não há uma quantidade segura de álcool para gestante. Bebida alcoolica pode causar má formações e trazer muito prejuízo para o feto.'
+        answer: 'Não há uma quantidade segura de álcool para gestante. Bebida alcoolica pode causar má formações e trazer muito prejuízo para o feto.'
       },
     ]
   },
@@ -83,24 +83,24 @@ export const tips = {
     items: [
       {
         question: 'Estou sentindo contrações antes o nono mês. É normal?',
-        anwser: 'Observe a frequêcia, intensidade e duração. Se elas forem dolorosas ou frequentes procure a maternidade.'
+        answer: 'Observe a frequêcia, intensidade e duração. Se elas forem dolorosas ou frequentes procure a maternidade.'
       },
       {
         question: 'Estou tendo contrações e já estou no nono mês. É normal?',
-        anwser: 'Acomode-se em um lugar tranquilo e conte quantas vezes ela acontece. Se forem dolorosas e pelo enos 2 contrações a cada 10 minutos procure a maternidade.'
+        answer: 'Acomode-se em um lugar tranquilo e conte quantas vezes ela acontece. Se forem dolorosas e pelo enos 2 contrações a cada 10 minutos procure a maternidade.'
       },
       {
         question: 'Preciso depilar a virilha para o parto?',
-        anwser: 'Não precisa, nem para as consultas e nem para o parto.'
+        answer: 'Não precisa, nem para as consultas e nem para o parto.'
       },
       {
         question: 'Estou perdendo sangue pela vagina. Preciso de ajuda?',
-        anwser: 'Se sangrar, perder água (o que indica que a bolsa rompeu), tiver febre ou em caso de dúvidas deve ir para a maternidade, mesmo que nao esteja sentindo dores ou contrações.'
+        answer: 'Se sangrar, perder água (o que indica que a bolsa rompeu), tiver febre ou em caso de dúvidas deve ir para a maternidade, mesmo que nao esteja sentindo dores ou contrações.'
       },
 
       {
         question: 'Já tive uma cesárea, posso ter parto normal na próxma gestação?',
-        anwser: 'Geralmente sim. Converse sobre isto no seu pré-natal.'
+        answer: 'Geralmente sim. Converse sobre isto no seu pré-natal.'
       },
     ]
   },
@@ -109,23 +109,23 @@ export const tips = {
     items: [
       {
         question: 'Posso convidar algue para ficar sepre do meu lado no parto?',
-        anwser: 'Na maternidade, você tem o direito de escolher o acompanhante e tê-lo sempre a seu lado durante o trabalho de parto e pós-parto.'
+        answer: 'Na maternidade, você tem o direito de escolher o acompanhante e tê-lo sempre a seu lado durante o trabalho de parto e pós-parto.'
       },
       {
         question: 'O tamanho do bebê influencia na chance de ter um parto normal?',
-        anwser: 'Sim. Quando seu bebê é muito grande ou muito prematuro, pode haver necessidade de se fazer uma cesariana.'
+        answer: 'Sim. Quando seu bebê é muito grande ou muito prematuro, pode haver necessidade de se fazer uma cesariana.'
       },
       {
         question: 'Eu preciso levar eu cartão pre-natal no dia do parto?',
-        anwser: 'Sim. É muito importante. Não esqueça de levar o Cartão da Gestante e os exames que você realzou. No cartão estão as informações ais importantes sobre a sua gestação, leve para onde for.'
+        answer: 'Sim. É muito importante. Não esqueça de levar o Cartão da Gestante e os exames que você realzou. No cartão estão as informações ais importantes sobre a sua gestação, leve para onde for.'
       },
       {
         question: 'É normal continuar com sangramento na vagna alguns ias depois o parto?',
-        anwser: 'Sim. Até 30 a 40 dias poderá sar sangue e depois um liquido pela vagina. principalente enquanto amamenta. Ele é chamado de lóquio e sua cor varia co o passar dos dias, fcando rosado, amarelado e depois branco.'
+        answer: 'Sim. Até 30 a 40 dias poderá sar sangue e depois um liquido pela vagina. principalente enquanto amamenta. Ele é chamado de lóquio e sua cor varia co o passar dos dias, fcando rosado, amarelado e depois branco.'
       },
       {
         question: 'Como eu posso guardar meu leite na geladeira?',
-        anwser: 'O seu leite deve ser guardado e recipente próprio, que pode ser comprado em farmácias ou esterilizado em casa. Ele deve ser bem fechado, selado e esterilizado'
+        answer: 'O seu leite deve ser guardado e recipente próprio, que pode ser comprado em farmácias ou esterilizado em casa. Ele deve ser bem fechado, selado e esterilizado'
       },
     ]
   },

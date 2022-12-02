@@ -1,5 +1,10 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 
+interface IProps {
+  question: string
+  answer: string
+}
+
 export type propsNavigationStack = {
   Login: undefined,
   RegisterGestation: undefined
@@ -14,7 +19,7 @@ export type propsNavigationStack = {
   RegisterAccount: undefined,
   Heart: undefined,
   BodyChanges: undefined,
-  QuestionsTips: undefined,
+  Questions: any,
   Bag: undefined,
 };
 
