@@ -1,19 +1,25 @@
 import mongoose, { model, Schema, Document } from "mongoose";
+import { IImageProps } from "../interfaces/IImageProps";
 
 export interface IGestation extends Document {
-  title: string;
-  description: string;
-  created_at: Date;
+  gallery: Array<IImageProps>;
+  lastMenstruation: number;
+  userId: string;
+  created_at: Date
 }
 
 export const GestationSchema: Schema = new mongoose.Schema<IGestation>({
-  title: {
-    type: String,
-    required: true,
+  gallery: {
+    type: [{}],
+    required: false,
   },
-  description: {
-    type: String,
+  lastMenstruation: {
+    type: Number,
     requered: true,
+  },
+  userId: {
+    type: String,
+    required: true
   },
   created_at: {
     type: Date,

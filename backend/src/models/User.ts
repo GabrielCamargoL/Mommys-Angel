@@ -27,6 +27,10 @@ const UserSchema: Schema = new mongoose.Schema<IUserDocument>({
     required: true,
     select: false
   },
+  activeGestation: {
+    type: String,
+    default: null,
+  },
   created_at: {
     type: Date,
     default: Date.now(),

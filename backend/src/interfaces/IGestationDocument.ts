@@ -2,7 +2,7 @@ import { Document } from 'mongoose';
 
 export interface IGestationDocument extends Document {
   gallery: Array<{}>;
-  lastMenstruation: Date;
+  lastMenstruation: number;
   userId: string;
   created_at: Date
 }

@@ -1,11 +1,20 @@
-import { Router } from 'express';
+import { Request, Response, Router } from 'express';
 import AuthController from './controllers/AuthController';
 import GestationController from './controllers/GestationController';
 import UserController from './controllers/UserController';
 
 import authMiddleware from './middlewares/authMiddleware';
 
+
+class Welcome {
+  static getWelcome(req: Request, res: Response) {
+    return res.send({ message: "Mommys Angel's API 👶 👩 🤰 " })
+  }
+}
+
 const router = Router();
+
+router.get('/', Welcome.getWelcome);
 
 router.post('/auth', AuthController.authenticate);
 
@@ -14,9 +23,9 @@ router.get('/users/:id', authMiddleware, UserController.Gestation);
 router.post('/users', UserController.store);
 router.delete('/users/:id', authMiddleware, UserController.delete);
 
-router.get('/Gestations', authMiddleware, GestationController.index);
-router.get('/Gestations/:id', authMiddleware, GestationController.Gestation);
-router.post('/Gestations', authMiddleware, GestationController.store);
-router.delete('/Gestations/:id', authMiddleware, GestationController.delete);
+router.get('/gestations', authMiddleware, GestationController.index);
+router.get('/gestations/:id', authMiddleware, GestationController.Gestation);
+router.post('/gestations', authMiddleware, GestationController.store);
+router.delete('/gestations/:id', authMiddleware, GestationController.delete);
 
 export default router;
