@@ -1,12 +1,12 @@
 import mongoose, { model, Schema, Document } from "mongoose";
 
-export interface IAnnotation extends Document {
+export interface IGestation extends Document {
   title: string;
   description: string;
   created_at: Date;
 }
 
-export const AnnotationSchema: Schema = new mongoose.Schema<IAnnotation>({
+export const GestationSchema: Schema = new mongoose.Schema<IGestation>({
   title: {
     type: String,
     required: true,
@@ -21,6 +21,6 @@ export const AnnotationSchema: Schema = new mongoose.Schema<IAnnotation>({
   },
 });
 
-export const Annotation = model('Annotation', AnnotationSchema);
+export const Gestation = model('Gestation', GestationSchema);
 
-export default Annotation;
+export default Gestation;

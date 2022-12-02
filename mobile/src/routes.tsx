@@ -17,6 +17,7 @@ import Tips from "./pages/Tips";
 import Settings from "./pages/Settings";
 import BodyChanges from "./pages/BodyChanges";
 import Bag from "./pages/Bag";
+import RegisterGestation from "./pages/RegisterGestation";
 
 const Stack = createNativeStackNavigator<propsNavigationStack>();
 const BottomTab = createBottomTabNavigator<propsNavigationStack>();
@@ -26,6 +27,7 @@ export function Routes() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="RegisterGestation" component={RegisterGestation} options={{ headerShown: true, headerTitle: 'Registrar Nova Gestação' }} />
         <Stack.Screen name="Contraction" component={Contraction} />
         <Stack.Screen name="Medicines" component={Medicines} />
         <Stack.Screen name="Heart" component={Heart} />

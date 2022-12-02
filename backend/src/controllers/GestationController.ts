@@ -1,26 +1,26 @@
 import { Request, Response } from 'express';
-import { User } from '../models/User';
-import { createUser, deleteUser, findUser } from '../services/UserService';
+import Gestation from '../models/Gestation';
+import { createGestation, deleteGestation, findGestation } from '../services/GestationService';
 
-class UserController {
+class GestationController {
   async index(req: Request, res: Response) {
-    return res.json(await User.find());
+    return res.json(await Gestation.find());
   }
 
   async Gestation(req: Request, res: Response) {
-    const findResponse = await findUser(req, res)
+    const findResponse = await findGestation(req, res)
     return res.status(findResponse.status).json(findResponse.message);
   }
 
   async store(req: Request, res: Response) {
-    const createResponse = await createUser(req, res);
+    const createResponse = await createGestation(req, res);
     return res.status(createResponse.status).json(createResponse.message)
   }
 
   async delete(req: Request, res: Response) {
-    const deleteResponse = await deleteUser(req, res);
+    const deleteResponse = await deleteGestation(req, res);
     return res.status(deleteResponse.status).json(deleteResponse.message);
   }
 }
 
-export default new UserController();
+export default new GestationController();
