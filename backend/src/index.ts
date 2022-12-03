@@ -10,6 +10,7 @@ console.log(new Date());
 
 async function main() {
   await mongoose.connect('mongodb+srv://GabrielCamargoL:1234@mommysangel.ppqnyde.mongodb.net/MommysAngel');
+  // await mongoose.connect('mongodb://username:1234@localhost:27017/');
 }
 main().catch(err => console.log('mongoDB connection error: ' + err));
 
