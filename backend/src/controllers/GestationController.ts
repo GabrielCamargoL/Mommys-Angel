@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Gestation from '../models/Gestation';
-import { createGestation, deleteGestation, findGestation } from '../services/GestationService';
+import { createGestation, deleteGestation, findGestationByUserId } from '../services/GestationService';
 
 class GestationController {
   async index(req: Request, res: Response) {
@@ -8,7 +8,7 @@ class GestationController {
   }
 
   async Gestation(req: Request, res: Response) {
-    const findResponse = await findGestation(req, res)
+    const findResponse = await findGestationByUserId(req, res)
     return res.status(findResponse.status).json(findResponse.message);
   }
 

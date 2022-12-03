@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { User } from '../models/User';
+import Gestation from '../models/Gestation';
 
 class AuthController {
   async authenticate(req: Request, res: Response) {
@@ -17,12 +18,15 @@ class AuthController {
       return res.sendStatus(401);
     }
 
-    const token = jwt.sign({ id: user._id }, 'segredo', { expiresIn: '1d' });
+    const gestations = await Gestation.find({ userId: user.id });
+
+    const token = jwt.sign({ id: user._id }, 'segredo');
 
     user.password = undefined;
 
     return res.json({
       user,
+      gestations,
       token
     })
   }

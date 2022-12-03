@@ -12,7 +12,7 @@ export async function createUser(req: Request, res: Response) {
 
   const user = await User.create(req.body);
   user.password = undefined;
-  const token = jwt.sign({ id: user.id, }, 'segredo', { expiresIn: '1d' });
+  const token = jwt.sign({ id: user.id, }, 'segredo');
 
   return responseWithStatus({ user, token }, 201);
 }

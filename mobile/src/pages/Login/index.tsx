@@ -35,7 +35,12 @@ function Login() {
 			await SessionController.setToken(response.data.token);
 			await SessionController.setUserInfo(response.data.user);
 
-			navigation.navigate('RegisterGestation');
+			if ((response.data.gestations).length === 0) {
+				return navigation.navigate('RegisterGestation');
+			} else {
+				return navigation.navigate('HomeStack');
+			}
+
 		} catch (error) {
 			Alert.alert('algo deu errado, tente novamente mais tarde.')
 		}
@@ -51,7 +56,6 @@ function Login() {
 
 			await SessionController.setToken(response.data.token);
 			await SessionController.setUserInfo(response.data.user);
-
 
 			navigation.navigate('RegisterGestation');
 		} catch (error) {

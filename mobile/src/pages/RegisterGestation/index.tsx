@@ -15,17 +15,6 @@ export default function RegisterGestation() {
 
   const navigation = useNavigation<propsStack>();
 
-  async function getToken() {
-    const token = await SessionController.getToken();
-    const user = await SessionController.getUserInfo();
-    // if (token && user) navigation.navigate('HomeStack')
-  }
-
-  useEffect(() => {
-    getToken()
-  }, []);
-
-
   const onChange = (event, selectedDate) => {
     setLastMenstruation(selectedDate);
     setShow(false);

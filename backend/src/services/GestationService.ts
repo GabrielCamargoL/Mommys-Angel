@@ -9,14 +9,15 @@ export async function createGestation(req: Request, res: Response) {
   };
 }
 
-export async function findGestation(req: Request, res: Response) {
+export async function findGestationByUserId(req: Request, res: Response) {
   const { id } = req.params;
 
   try {
-    const gestation = await Gestation.findById(id);
-    if (gestation) return { "message": gestation, "status": 200 };
+    const gestation = await Gestation.find({ userId: id });
+    if (gestation.length === 0) return { "message": "gestação Não encontrada", "status": 404 }
 
-    return { "message": "gestação Não encontrada", "status": 404 }
+    return { "message": gestation, "status": 200 };
+
   }
   catch (err) {
     return { "message": { "error": err }, "status": 500 }
