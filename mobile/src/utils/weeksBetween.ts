@@ -1,3 +1,6 @@
-export function weeksBetween(initialDate, finalDate) {
-  return Math.round((finalDate - initialDate) / (7 * 24 * 60 * 60 * 1000));
+export function weeksBetween(finalDate) {
+
+  var today = new Date().getTime();
+
+  return Math.round((finalDate - today) / 604800000);
 }
