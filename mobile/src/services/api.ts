@@ -5,7 +5,7 @@ const localCasa = '192.168.15.112'
 const localFATEC = '172.16.10.187'
 
 export const api = axios.create({
-  baseURL: `http://${localFATEC}:3000`
+  baseURL: `http://${localCasa}:3000`
 });
 
 api.interceptors.request.use(async (config: any) => {

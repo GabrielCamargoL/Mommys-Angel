@@ -1,4 +1,5 @@
 import { Request, Response, Router } from 'express';
+import multer from 'multer';
 import AuthController from './controllers/AuthController';
 import GestationController from './controllers/GestationController';
 import UserController from './controllers/UserController';
@@ -13,6 +14,7 @@ class Welcome {
 }
 
 const router = Router();
+const upload = multer();
 
 router.get('/', Welcome.getWelcome);
 
@@ -26,6 +28,7 @@ router.delete('/users/:id', authMiddleware, UserController.delete);
 router.get('/gestations', authMiddleware, GestationController.index);
 router.get('/gestations/:id', authMiddleware, GestationController.Gestation);
 router.post('/gestations', authMiddleware, GestationController.store);
+router.put('/gestations/:id/images', authMiddleware, upload.array('image'), GestationController.uploadImages);
 router.delete('/gestations/:id', authMiddleware, GestationController.delete);
 
 export default router;

@@ -1,71 +1,106 @@
-import * as React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  useWindowDimensions,
-  Image,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import { Text, View, StyleSheet, useWindowDimensions, Image, TouchableOpacity, Alert } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Carousel from 'react-native-reanimated-carousel';
+import Modal from "react-native-modal";
+import { useEffect, useState } from 'react';
+
+import CamPicker from '../../components/ImagePicker';
+import { api } from '../../services/api';
+import SessionController from '../../utils/SessionController';
+import Loading from '../../components/Loading';
+import { Button, TextButton } from './styles';
+
+interface carouselDataProps {
+  originalName: string,
+  mimeType: string,
+  file: string
+}
+
 export default function Gallery() {
   const { width } = useWindowDimensions();
-  const carouselData = [
-    {
-      name: 'mulher gravida 0',
-      image: require('../../assets/img/pregnant_sample.png'),
-    },
-    {
-      name: 'mulher gravida 1',
-      image: require('../../assets/img/pregnant_sample2.png'),
-    },
-    {
-      name: 'mulher gravida 2',
-      image: require('../../assets/img/pregnant_sample.png'),
-    },
-    {
-      name: 'mulher gravida 3',
-      image: require('../../assets/img/pregnant_sample2.png'),
-    },
-  ];
+  const [carouselData, setCarouselData] = useState<Array<carouselDataProps>>();
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  return (
-    <GestureHandlerRootView style={styles.container}>
-      <Carousel
-        data={carouselData}
-        style={{
-          width: '100%',
-          height: 240,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: '#000',
-        }}
-        width={280}
-        height={210}
-        pagingEnabled={true}
-        snapEnabled={true}
-        mode={'horizontal-stack'}
-        loop={true}
-        autoPlay={false}
-        autoPlayReverse={false}
-        modeConfig={{
-          snapDirection: 'left',
-          stackInterval: 18,
-          opacityInterval: 1,
-          showLength: 2
-        }}
-        customConfig={() => ({ type: 'positive', viewCount: 5 })}
-        renderItem={({ item, index }) => (
-          <View>
-            <TouchableOpacity onPress={() => Alert.alert(`Foto: ${index}\n${item.name}`)}>
-              <Image style={{ height: 240, width: 240 }} source={item.image} />
-            </TouchableOpacity>
+  useEffect(() => {
+    getImages()
+  }, []);
+
+  async function getImages() {
+    setLoading(true)
+    const user = await SessionController.getUserInfo();
+    const response = await api.get(`/gestations/${user?._id}`)
+    setCarouselData(response.data[0].gallery)
+    setLoading(false)
+  }
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  return (<>
+    {loading ?
+      <Loading /> :
+      <>
+        <GestureHandlerRootView style={styles.container}>
+          {carouselData ? <Carousel
+            data={carouselData}
+            style={{
+              width: '100%',
+              height: 300,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: '#F3E6F7',
+            }}
+            width={280}
+            height={210}
+            pagingEnabled={true}
+            snapEnabled={true}
+            mode={'horizontal-stack'}
+            loop={true}
+            autoPlay={false}
+            autoPlayReverse={false}
+            modeConfig={{
+              snapDirection: 'left',
+              stackInterval: 18,
+              opacityInterval: 1,
+              showLength: 2
+            }}
+            customConfig={() => ({ type: 'positive', viewCount: 5 })}
+            renderItem={({ item, index }) => (
+              <View>
+                <TouchableOpacity onPress={() => Alert.alert(`Foto: ${index}\n${item.originalName}`)}>
+                  <Image style={{ height: 240, width: 240 }} source={{ uri: `data:${item.mimeType};base64,${item.file}` }} />
+                </TouchableOpacity>
+              </View>
+            )}
+          /> : null}
+
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 50 }}>
+            <Button onPress={toggleModal} >
+              <TextButton>Adicionar Fotos a galeria</TextButton>
+            </Button>
           </View>
-        )}
-      />
-    </GestureHandlerRootView>
+
+          <Modal
+            style={StyleSheet.absoluteFill}
+            isVisible={isModalVisible}
+            deviceWidth={width}
+            onBackButtonPress={() => setModalVisible(false)}
+            onBackdropPress={() => setModalVisible(false)}
+            onModalWillHide={() => getImages()}
+            hideModalContentWhileAnimating={true}
+            backdropColor={'#FFF'}
+            hasBackdrop
+          >
+            <CamPicker />
+          </Modal>
+        </GestureHandlerRootView>
+
+      </>
+    }
+
+  </>
   );
 }
 
