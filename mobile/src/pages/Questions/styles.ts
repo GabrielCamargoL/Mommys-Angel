@@ -9,6 +9,7 @@ export const CardTips = styled.View`
   border-radius: 12px;
   margin: 20px 0px;
   padding: 8px 0px;
+  align-self: center;
 `;
 
 export const ViewIcon = styled.View`  

@@ -132,8 +132,6 @@ export default function CamPicker() {
           Authorization: `Bearer ${await SessionController.getToken()}`,
         },
       });
-      console.log('depois do try da imagem')
-      Alert.alert('acho que deu certo')
     } catch (err) {
       console.log(`imagem: ${err}`);
     }

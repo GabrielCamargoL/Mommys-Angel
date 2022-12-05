@@ -76,7 +76,7 @@ export default function Gallery() {
             )}
           /> : null}
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 50 }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Button onPress={toggleModal} >
               <TextButton>Adicionar Fotos a galeria</TextButton>
             </Button>

@@ -15,10 +15,11 @@ export const Button = styled.TouchableOpacity`
   height: 40px;
   border-radius: 8px;
   background-color: #F687B3;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TextButton = styled.Text`
-  margin-top: 20px;
   font-family: 'Montserrat-SemiBold';
   font-style: normal;
   font-weight: 600;
@@ -26,8 +27,4 @@ export const TextButton = styled.Text`
 
   color: #fff;
 
-  opacity: 0.85;
-  text-align: center;
-  align-self: center;
-  justify-self: center;
 `;

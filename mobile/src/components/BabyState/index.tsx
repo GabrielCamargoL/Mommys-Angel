@@ -8,7 +8,7 @@ export function BabyState({ lastMenstruation }) {
     <Container>
       <BabyCard>
         <CardTitle>Faltam {weeksBetween(lastMenstruation + 24192000000)} Semanas</CardTitle>
-        <CardDescription>Seu bebê está com 51cm. S2
+        <CardDescription>Seu bebê está com 30cm. S2
           {'\n\n'}Cuide bem dele, que logo logo este amorzinho estára em seus braços.</CardDescription>
       </BabyCard>
     </Container>
