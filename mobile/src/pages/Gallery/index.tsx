@@ -70,7 +70,7 @@ export default function Gallery() {
             renderItem={({ item, index }) => (
               <View>
                 <TouchableOpacity onPress={() => Alert.alert(`Foto: ${index}\n${item.originalName}`)}>
-                  <Image style={{ height: 240, width: 240 }} source={{ uri: `data:${item.mimeType};base64,${item.file}` }} />
+                  <Image style={{ height: 300, width: 300 }} source={{ uri: `data:${item.mimeType};base64,${item.file}` }} />
                 </TouchableOpacity>
               </View>
             )}

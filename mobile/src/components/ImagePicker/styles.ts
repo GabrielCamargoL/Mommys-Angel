@@ -22,12 +22,16 @@ export const Remove = styled.Text`
   color:#bb0000;
 `;
 
-export const StepText = styled.Text`
-  font-size: 15;
-  font-family: Roboto-Bold;
-  color: #1B4263;
+export const Title = styled.Text`
+  margin-top: 20px;
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-size: 20px;
+
+  color: #511;
+  text-align: center;
   align-self: center;
-  margin-bottom: 10
+  justify-self: center;
 `;
 
 export const Col = styled.View`
@@ -45,21 +49,21 @@ export const Row = styled.View.attrs({
 `;
 
 export const Label = styled.Text`
-  margin-bottom: 5;
-  font-family: Roboto-Medium;
-  font-size: 14;
-  color: #767272;
+  margin-top: 20px;
+  font-family: 'Montserrat-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+
+  color: #511;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
 `;
 
 export const ExempleImage = styled.Image`
   height:75;
   width:100;
-`;
-
-export const ExempleText = styled.Text`
-  font-family: Roboto-thin;
-  font-size: 12;
-  margin-bottom:15
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -69,7 +73,7 @@ export const Button = styled.TouchableOpacity`
   align-items: center;
   margin-top: 30;
   border-radius: 5;
-  background-color: #3B5998;
+  background-color: #D53F8C;
   margin-bottom: 20;
 `;
 

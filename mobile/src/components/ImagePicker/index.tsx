@@ -6,21 +6,16 @@ import SessionController from '../../utils/SessionController';
 
 import {
   Container,
-  Row,
   Col,
-  StepText,
+  Title,
   ScrollImages,
   Remove,
-  ExempleImage,
-  ExempleText,
   Button,
   ButtonText,
   Label,
 } from './styles';
 
 export default function CamPicker() {
-  ExempleText.defaultProps = {};
-  ExempleText.defaultProps.maxFontSizeMultiplier = 1;
 
   Label.defaultProps = {};
   Label.defaultProps.maxFontSizeMultiplier = 1;
@@ -148,9 +143,9 @@ export default function CamPicker() {
     <>
       <Container>
 
-        <StepText>Tirar uma foto</StepText>
+        <Title>Enviar umas fotos</Title>
 
-        <Label>{'Selecione até 10 fotos bem bacanas do seu veículo'}</Label>
+        <Label>{'Registre os momentos da sua gestação para recordação'}</Label>
 
         <View
           style={{
