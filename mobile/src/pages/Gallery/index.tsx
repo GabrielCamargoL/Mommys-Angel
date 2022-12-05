@@ -8,7 +8,7 @@ import CamPicker from '../../components/ImagePicker';
 import { api } from '../../services/api';
 import SessionController from '../../utils/SessionController';
 import Loading from '../../components/Loading';
-import { Button, TextButton } from './styles';
+import { Button, TextButton, Title } from './styles';
 
 interface carouselDataProps {
   originalName: string,
@@ -18,7 +18,7 @@ interface carouselDataProps {
 
 export default function Gallery() {
   const { width } = useWindowDimensions();
-  const [carouselData, setCarouselData] = useState<Array<carouselDataProps>>();
+  const [carouselData, setCarouselData] = useState<Array<carouselDataProps>>([]);
   const [isModalVisible, setModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -43,7 +43,7 @@ export default function Gallery() {
       <Loading /> :
       <>
         <GestureHandlerRootView style={styles.container}>
-          {carouselData ? <Carousel
+          {carouselData.length > 0 ? <Carousel
             data={carouselData}
             style={{
               width: '100%',
@@ -74,7 +74,11 @@ export default function Gallery() {
                 </TouchableOpacity>
               </View>
             )}
-          /> : null}
+          /> :
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <Title>{'Você ainda não tem fotos sobre a sua gestação :['}</Title>
+            </View>
+          }
 
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Button onPress={toggleModal} >

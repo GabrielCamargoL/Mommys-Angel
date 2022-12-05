@@ -10,6 +10,16 @@ export const Container = styled.View`
   width: 380px;
 `;
 
+export const Title = styled.Text`
+  font-family: 'Montserrat-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+
+  color: #a6a;
+
+`;
+
 export const Button = styled.TouchableOpacity`
   width: 280px;
   height: 40px;
